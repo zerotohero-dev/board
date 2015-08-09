@@ -1,0 +1,25 @@
+{
+  "name": "board",
+  "version": "0.1.0",
+  "description": "A minimalistic dashboard application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/v0lkan/board.git"
+  },
+  "keywords": [
+    "dashboard",
+    "dashing",
+    "monitor",
+    "monitoring"
+  ],
+  "author": "Volkan Özçelik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/v0lkan/board/issues"
+  },
+  "homepage": "https://github.com/v0lkan/board"
+}
