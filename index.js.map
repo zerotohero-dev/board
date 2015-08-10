@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.es6"],"names":[],"mappings":";;uBAAoB,YAAY;;AAEhC,aAFQ,KAAK,GAEN,CAAC","file":"index.js","sourcesContent":["import {serve} from './lib/init';\n\nserve();\n"]}

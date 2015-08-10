@@ -1,0 +1,1 @@
+{"version":3,"sources":["web.es6"],"names":[],"mappings":"AAAA,YAAY,CAAC","file":"web.js","sourcesContent":["'use strict';\n\n// Web server to serve static assets under \"public\";\n// For development only.\n// For production it's recommended to recommended to replace it with NGINX, or HAProxy.\n"]}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["log.es6"],"names":[],"mappings":"AAAA,YAAY,CAAC;;;;;AAEb,IAAI,GAAG,GAAG,SAAN,GAAG,GAAiB;sCAAV,KAAK;AAAL,aAAK;;;AACf,WAAO,CAAC,GAAG,CAAC,KAAK,CAAC,CAAC;CACtB,CAAC;;qBAEa,GAAG","file":"log.js","sourcesContent":["'use strict';\n\nlet log = (...items) => {\n    console.log(items);\n};\n\nexport default log;\n"]}
