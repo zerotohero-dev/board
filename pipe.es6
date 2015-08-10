@@ -19,13 +19,14 @@
  */
 
 const IO_PORT = 4242;
-const Q_PORT = 4243;
+
 const OK = 'OK';
 const HTTP_SUCCESS = 200;
 
+
 import {createServer} from 'http';
 import bind from 'socket.io';
-import zmq from 'zmq';
+
 
 import log from './lib/log';
 
@@ -39,13 +40,3 @@ let io = bind(app);
 app.listen(IO_PORT);
 
 log(`Board:: Pipe is running at port '${IO_PORT}'.`);
-
-let sock = zmq.socket('pull');
-
-sock.connect(`tcp://127.0.0.1:${Q_PORT}`);
-
-log('Board:: Worker connected to port 3000');
-
-sock.on('message', function(msg){
-    log('work: %s', msg.toString());
-});

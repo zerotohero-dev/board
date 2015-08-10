@@ -26,16 +26,12 @@ var _socketIo = require('socket.io');
 
 var _socketIo2 = _interopRequireDefault(_socketIo);
 
-var _zmq = require('zmq');
-
-var _zmq2 = _interopRequireDefault(_zmq);
-
 var _libLog = require('./lib/log');
 
 var _libLog2 = _interopRequireDefault(_libLog);
 
 var IO_PORT = 4242;
-var Q_PORT = 4243;
+
 var OK = 'OK';
 var HTTP_SUCCESS = 200;
 
@@ -49,15 +45,5 @@ var io = (0, _socketIo2['default'])(app);
 app.listen(IO_PORT);
 
 (0, _libLog2['default'])('Board:: Pipe is running at port \'' + IO_PORT + '\'.');
-
-var sock = _zmq2['default'].socket('pull');
-
-sock.connect('tcp://127.0.0.1:' + Q_PORT);
-
-(0, _libLog2['default'])('Board:: Worker connected to port 3000');
-
-sock.on('message', function (msg) {
-  (0, _libLog2['default'])('work: %s', msg.toString());
-});
 
 //# sourceMappingURL=pipe.js.map
