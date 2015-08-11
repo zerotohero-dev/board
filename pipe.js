@@ -12,7 +12,7 @@
 // documentation is sufficient or not.
 
 /**
- * ## Pipe ##
+ * ## Pipe
  *
  * Pipe is a WebSocket server that consumes messages from the running jobs and
  * dispatches them to the registered clients.
@@ -39,6 +39,10 @@ var app = (0, _http.createServer)(function (req, res) {
   res.writeHead(HTTP_SUCCESS);
   res.end(OK);
 });
+
+// TODO:
+// Google representatives have videos on youtubes describing the inner
+// workings of chrome itself (like when it switches from a linkedlist array to a fixed array, etc), and how to optimize them. See GDC 2012: From Console to Chrome for more.
 
 var io = (0, _socketIo2['default'])(app);
 

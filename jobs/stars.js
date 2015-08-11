@@ -2,17 +2,15 @@
 
 var _libJob = require('../lib/job');
 
-console.log(module.filename);
-
 (0, _libJob.create)({
     interval: 5,
-    targets: ['world']
+    targets: ['hello', 'world']
 }, function (send) {
-    var data = { carrot: 21, tomatoes: 51, status: 'down', carrots: 'yuck!' };
+    var data = { carrot: 1, tomatoes: 1, status: 'so so', chili: 'hot!' };
 
     send(data);
 }, function (err) {
     console.log(err);
 });
 
-//# sourceMappingURL=world.js.map
+//# sourceMappingURL=stars.js.map

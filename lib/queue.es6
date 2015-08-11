@@ -2,6 +2,8 @@
 
 import zmq from 'zmq';
 
+import log from './log';
+
 const TCP_ENDPOINT = 'tcp://127.0.0.1';
 const PORT = 4243;
 
@@ -40,10 +42,10 @@ let createPullSocket = (messageHandler) => {
     connect();
     listen();
 
-    log('Board:: Message bus [PULL] socket connected to port ${PORT}.');
+    log(`Board:: Message bus [PULL] socket connected to port ${PORT}.`);
 
     return {
-        disconnect: () => {disconnect();}
+        disconnect: () => {disconnect();},
         connect: () => {
             connect();
             listen();
@@ -77,7 +79,7 @@ let createPushSocket = () => {
     connect();
     listen();
 
-    log('Board:: Message bus [PUSH] socket connected to port ${PORT}.');
+    log(`Board:: Message bus [PUSH] socket connected to port ${PORT}.`);
 
     return {
         send: (data) => {

@@ -3,7 +3,7 @@ let every = (seconds, delegate) => {
         try {
             delegate();
         } catch (ignore) {
-
+            console.log(ignore);
         }
     }, seconds * 1000);
 };

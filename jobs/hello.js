@@ -1,15 +1,26 @@
 'use strict';
 
-var _libRunner = require('../lib/runner');
+// TODO: move Board lib to a separate npm module.
+// this project should only contain the bare minimum that the user has to
+// configure to run the bhards.
+// import * as job from 'board.lib/job'
+// or better `import * as job from 'board.job'
 
-var _libQueue = require('../lib/queue');
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
 
-var sock = (0, _libQueue.createPushSocket)();
+var _libJob = require('../lib/job');
 
-(0, _libRunner.every)(3, function () {
-    var time = new Date().getTime();
+var job = _interopRequireWildcard(_libJob);
 
-    sock.send({ sender: 'jobs/hello', ts: time });
+job.create({
+    interval: 3,
+    targets: ['hello']
+}, function (send) {
+    var data = { carrot: 12, tomatoes: 45, status: 'up', jellybeans: 'yummy' };
+
+    send(data);
+}, function (err) {
+    console.log(err);
 });
 
 //# sourceMappingURL=hello.js.map

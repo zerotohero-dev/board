@@ -2,13 +2,11 @@
 
 import {create} from '../lib/job';
 
-console.log(module.filename);
-
 create({
     interval: 5,
-    targets: ['world']
+    targets: ['hello', 'world']
 }, (send) => {
-    let data = { carrot: 21, tomatoes: 51, status: 'down', carrots: 'yuck!' };
+    let data = { carrot: 1, tomatoes: 1, status: 'so so', chili: 'hot!' };
 
     send(data);
 }, (err) => { console.log(err); });
