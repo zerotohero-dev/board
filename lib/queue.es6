@@ -6,6 +6,8 @@ import log from './log';
 
 const TCP_ENDPOINT = 'tcp://127.0.0.1';
 const PORT = 4243;
+const TRANSPORT = 'dashboard-transport';
+const URL = `${TCP_ENDPOINT}:${PORT}`;
 
 let createPullSocket = (messageHandler) => {
     let sock = null;
@@ -18,17 +20,19 @@ let createPullSocket = (messageHandler) => {
         if (!sock) {return;}
 
         sock.removeAllListeners();
-        sock.disconnect();
+        sock.unbind();
         sock = null;
     };
 
     let connect = () => {
-        sock = zmq.socket('pull');
+        sock = zmq.socket('sub');
 
         if (!sock) {return;}
 
-        sock.connect(`${TCP_ENDPOINT}:${PORT}`, (err) => {
+        sock.bind(URL, (err) => {
             if (err) {sock = null;}
+
+            sock.subscribe(TRANSPORT);
         });
     };
 
@@ -36,7 +40,7 @@ let createPullSocket = (messageHandler) => {
         if (!sock) {return;}
 
         sock.on('error', (err) => {void err;});
-        sock.on('message', (data) => {handler(data);});
+        sock.on('message', (topic, message) => {handler(message);});
     };
 
     connect();
@@ -57,18 +61,20 @@ let createPushSocket = () => {
     let sock = null;
 
     let connect = () => {
-        sock = zmq.socket('push');
+        sock = zmq.socket('pub');
 
         if (!sock) {return;}
 
-        sock.bind(`${TCP_ENDPOINT}:${PORT}`, (err) => {
-            if (err) {sock = null;}
+        sock.connect(URL, (err) => {
+            if (err) {
+                sock = null;
+            }
         });
     };
 
     let disconnect = () => {
         sock.removeAllListeners();
-        sock.unbind();
+        sock.disconnect();
         sock = null;
     };
 
@@ -85,7 +91,7 @@ let createPushSocket = () => {
         send: (data) => {
             if (!sock) {return;}
 
-            sock.send(data);
+            sock.send([TRANSPORT, JSON.stringify(data)]);
         },
         connect: () => {
             connect();

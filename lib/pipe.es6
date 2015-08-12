@@ -3,45 +3,49 @@
 import {createServer} from 'http';
 import {exists, readFile} from 'fs';
 import {join} from 'path';
+import socketIo from 'socket.io';
 
 import {createPullSocket as createSocket} from './queue';
 import log from './log';
 
-const CONFIG_PATH = join(__dirname, '../config.json');
+const OK = 'OK';
+const HTTP_SUCCESS = 200;
+const IO_PORT = 4242;
 
-let handler = (req, res) => {
 
+let server = createServer();
+let io = socketIo(server);
+
+server.listen(IO_PORT);
+
+let namespaces = {};
+
+let noop = () => {};
+
+let createChannel = (channel) => {
+    namespaces[channel] = io.of(`/${channel}`);
 };
 
-let initializeSockets = (targets) => {
-    targets.forEach((target) => {
+let init = (channels) => {
+    channels.forEach(channel => createChannel(channel));
 
+    createSocket((data) => {
+        let target = parsed.target;
+
+        if (!target) {return;}
+
+        if (namespaces[target]) {
+            console.log(data.toString());
+            namespaces[target].emit('board', data);
+        }
     });
+
+    // init is like a constructor function; or "like" a static initializer;
+    // therefore it should be called only once.
+    init = noop;
 };
 
-let initialize = (config) => {
-    let {targets} = config;
-
-    if (!targets) {return;}
-
-    initializeSockets(targets);
-};
-
-let processJson = (err, data) => {
-    if (err) {return;}
-
-    let config = JSON.parse(data);
-
-    initialize(config);
-};
-
-let checkExistence = (available) => {
-    if (!available) {return;}
-
-    readFile(CONFIG_PATH, {encoding: 'utf8'}, processJson);
-};
-
-exists(CONFIG_PATH, checkExistence());
+export {init};
 
 
 // targets: channels
@@ -67,9 +71,9 @@ exists(CONFIG_PATH, checkExistence());
 
 // TODO: something reads the config json and creates the /public folder.
 
-let sock = createSocket((data) => {
-    log('SOCKET: incoming data', data);
-});
+//let sock = createSocket((data) => {
+//    log('SOCKET: incoming data', data);
+//});
 
 //let handler = (req, res) => {
 //

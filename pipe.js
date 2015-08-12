@@ -7,47 +7,10 @@
  * Please see the LICENSE.md.md file for details.
  */
 
-// TODO: find something that parses these doc tags and creates documentation.
-// or at least after finishing the project, thing about whether inline
-// documentation is sufficient or not.
+var _libPipe = require('./lib/pipe');
 
-/**
- * ## Pipe
- *
- * Pipe is a WebSocket server that consumes messages from the running jobs and
- * dispatches them to the registered clients.
- */
+var _configJson = require('./config.json');
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var _http = require('http');
-
-var _socketIo = require('socket.io');
-
-var _socketIo2 = _interopRequireDefault(_socketIo);
-
-var _libLog = require('./lib/log');
-
-var _libLog2 = _interopRequireDefault(_libLog);
-
-var IO_PORT = 4242;
-
-var OK = 'OK';
-var HTTP_SUCCESS = 200;
-
-var app = (0, _http.createServer)(function (req, res) {
-  res.writeHead(HTTP_SUCCESS);
-  res.end(OK);
-});
-
-// TODO:
-// Google representatives have videos on youtubes describing the inner
-// workings of chrome itself (like when it switches from a linkedlist array to a fixed array, etc), and how to optimize them. See GDC 2012: From Console to Chrome for more.
-
-var io = (0, _socketIo2['default'])(app);
-
-app.listen(IO_PORT);
-
-(0, _libLog2['default'])('Board:: Pipe is running at port \'' + IO_PORT + '\'.');
+(0, _libPipe.init)(_configJson.boards);
 
 //# sourceMappingURL=pipe.js.map

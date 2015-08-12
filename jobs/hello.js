@@ -16,7 +16,12 @@ job.create({
     interval: 3,
     targets: ['hello']
 }, function (send) {
-    var data = { carrot: 12, tomatoes: 45, status: 'up', jellybeans: 'yummy' };
+    var data = {
+        tile: 'project-status',
+        title: 'Project Completeness',
+        message: '1 of 10 tasks done.',
+        percentage: '90%'
+    };
 
     send(data);
 }, function (err) {

@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/v0lkan/board",
   "dependencies": {
+    "socket.io": "^1.3.6",
     "zmq": "^2.12.0"
   }
 }
