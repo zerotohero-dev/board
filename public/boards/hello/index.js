@@ -20,13 +20,9 @@ var socket = io('http://localhost:4242/hello');
 socket.on('connect', function () {});
 
 socket.on('board', function (data) {
-    var parsed = JSON.parse(data);
+  var parsed = JSON.parse(data);
 });
 
-debugger;
-
-socket.on('disconnect', function () {
-    socket.socket.connect();
-});
+socket.on('disconnect', function () {});
 
 //# sourceMappingURL=index.js.map

@@ -17,15 +17,11 @@
 
 var socket = io('http://localhost:4242/hello');
 
-socket.on('connect', function(){});
+socket.on('connect', () => {});
 
-socket.on('board', function(data){
+socket.on('board', (data) => {
     var parsed = JSON.parse(data);
 });
 
-debugger;
-
-socket.on('disconnect', function(){
-    socket.socket.connect();
-});
+socket.on('disconnect', () => {});
 
