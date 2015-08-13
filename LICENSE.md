@@ -1,6 +1,13 @@
-The MIT License (MIT)
+      ______                     _________
+      ___  /_____________ _____________  /
+      __  __ \  __ \  __ `/_  ___/  __  /
+      _  /_/ / /_/ / /_/ /_  /   / /_/ /
+      /_.___/\____/\__,_/ /_/    \__,_/
+    a minimalist dashboard and monitoring solution.
 
-Copyright (c) 2015 Volkan Özçelik
+## The MIT License (MIT)
+
+Copyright (c) 2015 Volkan Özçelik <me@volkan.io>, and contributors.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
