@@ -12,7 +12,6 @@ const OK = 'OK';
 const HTTP_SUCCESS = 200;
 const IO_PORT = 4242;
 
-
 let server = createServer();
 let io = socketIo(server);
 
@@ -30,12 +29,16 @@ let init = (channels) => {
     channels.forEach(channel => createChannel(channel));
 
     createSocket((data) => {
+        if (!data) {return;}
+
+        let parsed = JSON.parse(data.toString());
         let target = parsed.target;
 
         if (!target) {return;}
 
         if (namespaces[target]) {
-            console.log(data.toString());
+            log(`Emitting data for "${target}"`);
+
             namespaces[target].emit('board', data);
         }
     });

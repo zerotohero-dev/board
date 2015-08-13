@@ -2,8 +2,6 @@
 
 import {create} from '../lib/job';
 
-console.log(module.filename);
-
 create({
     interval: 5,
     targets: ['world']

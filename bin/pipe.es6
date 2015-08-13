@@ -7,8 +7,7 @@
  * Please see the LICENSE.md.md file for details.
  */
 
-import {init} from './lib/pipe';
-
-import {boards} from './config.json';
+import {init} from '../lib/pipe';
+import {boards} from '../config.json';
 
 init(boards);

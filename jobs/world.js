@@ -2,8 +2,6 @@
 
 var _libJob = require('../lib/job');
 
-console.log(module.filename);
-
 (0, _libJob.create)({
     interval: 5,
     targets: ['world']

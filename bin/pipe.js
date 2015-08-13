@@ -7,9 +7,9 @@
  * Please see the LICENSE.md.md file for details.
  */
 
-var _libPipe = require('./lib/pipe');
+var _libPipe = require('../lib/pipe');
 
-var _configJson = require('./config.json');
+var _configJson = require('../config.json');
 
 (0, _libPipe.init)(_configJson.boards);
 
