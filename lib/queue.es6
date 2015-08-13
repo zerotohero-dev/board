@@ -64,7 +64,7 @@ let createPullSocket = (messageHandler) => {
     log(`Board:: Message bus [PULL] socket connected to port ${PORT}.`);
 
     return {
-        disconnect: () => {disconnect();},
+        disconnect: () => disconnect(),
         connect: () => {
             connect();
             listen();

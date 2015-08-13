@@ -23,8 +23,10 @@
 import express from 'express';
 import {join} from 'path';
 
+const PORT = 4244;
+
 let app = express();
 
 app.use(express.static(join(__dirname, '../public')));
 
-app.listen(4244);
+app.listen(PORT);

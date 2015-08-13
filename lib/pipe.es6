@@ -54,7 +54,7 @@ let init = (channels) => {
         if (namespaces[target]) {
             log(`Emitting data for "${target}"`);
 
-            namespaces[target].emit('board', data);
+            namespaces[target].emit('board', data.toString());
         }
     });
 

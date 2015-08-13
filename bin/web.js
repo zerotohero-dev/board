@@ -28,10 +28,12 @@ var _express2 = _interopRequireDefault(_express);
 
 var _path = require('path');
 
+var PORT = 4244;
+
 var app = (0, _express2['default'])();
 
 app.use(_express2['default']['static']((0, _path.join)(__dirname, '../public')));
 
-app.listen(4244);
+app.listen(PORT);
 
 //# sourceMappingURL=web.js.map
