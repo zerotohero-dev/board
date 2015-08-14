@@ -21,7 +21,7 @@ define(['exports'], function (exports) {
     var xhr = new XMLHttpRequest();
 
     xhr.addEventListener('load', function () {
-        document.getElementById('Yield').innerHTML = xhr.responseText;
+        document.getElementById('Yield').innerHTML = xhr.responseText + '<div id="Spanner"></div>';
 
         createSocket();
     });

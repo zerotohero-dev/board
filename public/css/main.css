@@ -1,20 +1,34 @@
 * {margin:0;padding:0}
 
 [data-tile] {
-    display: block;
     width: 300px;
     height: 242px;
-    border: 1px solid;
-    float: left;
-    padding: 0.2em;
-    margin: 0.2em;
-    text-align:center;
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    *display: inline;
+    zoom: 1;
+    font-size: medium;
+    margin: 0.35em;
+    padding: 0.25em;
     background: #cacaca;
+}
+
+#Spanner {
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
 }
 
 h1 {text-align:center;margin:0 0 0.5em 0;color:#fff;}
 
-#Yield {padding:1.5em}
+#Yield {
+    text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+    margin: 1em;
+}
 
 body {
     background: #444;

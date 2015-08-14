@@ -20,7 +20,7 @@ let url = `/boards/${target}.html`;
 let xhr = new XMLHttpRequest();
 
 xhr.addEventListener('load', () => {
-    document.getElementById('Yield').innerHTML = xhr.responseText;
+    document.getElementById('Yield').innerHTML = xhr.responseText + '<div id="Spanner"></div>';
 
     createSocket();
 });
