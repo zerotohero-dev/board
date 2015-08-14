@@ -15,12 +15,10 @@
  * <https://github.com/v0lkan/board/issues>
  */
 
-var _libJob = require('../lib/job');
-
-(0, _libJob.create)({
+require('../lib/job').create({
     interval: 5,
     targets: ['hello', 'world']
-}, function (send) {
+}, function(send) {
     var data = {
         tile: 'veggies',
         carrot: 1,
@@ -29,8 +27,4 @@ var _libJob = require('../lib/job');
     };
 
     send(data);
-}, function (err) {
-    console.log(err);
-});
-
-//# sourceMappingURL=stars.js.map
+}, function(err) {console.log(err);});
