@@ -20,7 +20,12 @@ define(['exports', '../lib/job'], function (exports, _libJob) {
         interval: 5,
         targets: ['hello', 'world']
     }, function (send) {
-        var data = { carrot: 1, tomatoes: 1, status: 'so so', chili: 'hot!' };
+        var data = {
+            tile: 'veggies',
+            carrot: 1,
+            tomatoes: 1,
+            chili: 'hot!'
+        };
 
         send(data);
     }, function (err) {

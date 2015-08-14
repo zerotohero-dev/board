@@ -31,6 +31,8 @@ glob('jobs/**/*.js', {
     if (err) {return;}
 
     files.forEach((file) => {
+        if (file.indexOf('.amd.js') > -1) {return;}
+
         let process = spawn('node', [join(__dirname, '..', file)]);
 
         process.stdout.on('data', (data) => {

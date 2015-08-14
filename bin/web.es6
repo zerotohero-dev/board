@@ -22,11 +22,18 @@
 
 import express from 'express';
 import {join} from 'path';
-
+import {createReadStream} from 'fs';
 const PORT = 4244;
 
 let app = express();
 
 app.use(express.static(join(__dirname, '../public')));
+
+app.get('/:boardName', function(req, res) {
+    createReadStream(join(__dirname, '../layout/index.html')).pipe(
+        res
+    );
+    //res.end('hello');
+})
 
 app.listen(PORT);

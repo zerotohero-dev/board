@@ -21,7 +21,11 @@ var _libJob = require('../lib/job');
     interval: 5,
     targets: ['world']
 }, function (send) {
-    var data = { carrot: 21, tomatoes: 51, status: 'down', carrots: 'yuck!' };
+    var data = {
+        tile: 'planet-of-the-day',
+        planet: 'Mercury',
+        description: 'An inhabitable piece of rock, very close to the sun.'
+    };
 
     send(data);
 }, function (err) {

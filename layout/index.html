@@ -1,6 +1,6 @@
-define(['exports', '../lib/job'], function (exports, _libJob) {
-    'use strict';
-
+<html>
+<head>
+    <!--
     /*
      *  ______                     _________
      *  ___  /_____________ _____________  /
@@ -15,21 +15,14 @@ define(['exports', '../lib/job'], function (exports, _libJob) {
      * Send your comments and suggestions to…
      * <https://github.com/v0lkan/board/issues>
      */
+    -->
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <div id="Yield">&hellip;</div>
 
-    (0, _libJob.create)({
-        interval: 5,
-        targets: ['world']
-    }, function (send) {
-        var data = {
-            tile: 'planet-of-the-day',
-            planet: 'Mercury',
-            description: 'An inhabitable piece of rock, very close to the sun.'
-        };
-
-        send(data);
-    }, function (err) {
-        console.log(err);
-    });
-});
-
-//# sourceMappingURL=world.amd.js.map
+    <script src="/js/vendor/socket.io/socket.io.js"></script>
+    <script src="/js/vendor/requirejs/require.js"
+            data-main="/js/common/index.amd"></script>
+</body>
+</html>

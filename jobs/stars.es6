@@ -21,7 +21,12 @@ create({
     interval: 5,
     targets: ['hello', 'world']
 }, (send) => {
-    let data = { carrot: 1, tomatoes: 1, status: 'so so', chili: 'hot!' };
+    let data = {
+        tile: 'veggies',
+        carrot: 1,
+        tomatoes: 1,
+        chili: 'hot!'
+    };
 
     send(data);
 }, (err) => { console.log(err); });

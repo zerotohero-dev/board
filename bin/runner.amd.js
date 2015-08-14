@@ -34,6 +34,10 @@ define(['exports', 'glob', 'child_process', 'path', '../lib/log'], function (exp
         }
 
         files.forEach(function (file) {
+            if (file.indexOf('.amd.js') > -1) {
+                return;
+            }
+
             var process = (0, _child_process.spawn)('node', [(0, _path.join)(__dirname, '..', file)]);
 
             process.stdout.on('data', function (data) {

@@ -28,11 +28,18 @@ var _express2 = _interopRequireDefault(_express);
 
 var _path = require('path');
 
+var _fs = require('fs');
+
 var PORT = 4244;
 
 var app = (0, _express2['default'])();
 
 app.use(_express2['default']['static']((0, _path.join)(__dirname, '../public')));
+
+app.get('/:boardName', function (req, res) {
+    (0, _fs.createReadStream)((0, _path.join)(__dirname, '../layout/index.html')).pipe(res);
+    //res.end('hello');
+});
 
 app.listen(PORT);
 

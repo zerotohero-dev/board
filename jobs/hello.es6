@@ -29,6 +29,7 @@ job.create({
 }, (send) => {
     let data = {
         tile: 'project-status',
+        class: 'success',
         title: 'Project Completeness',
         message: '1 of 10 tasks done.',
         percentage: '90%'

@@ -21,7 +21,11 @@ create({
     interval: 5,
     targets: ['world']
 }, (send) => {
-    let data = { carrot: 21, tomatoes: 51, status: 'down', carrots: 'yuck!' };
+    let data = {
+        tile: 'planet-of-the-day',
+        planet: 'Mercury',
+        description: 'An inhabitable piece of rock, very close to the sun.'
+    };
 
     send(data);
 }, (err) => { console.log(err); });
