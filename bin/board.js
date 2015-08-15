@@ -15,36 +15,8 @@
  * <https://github.com/v0lkan/board/issues>
  */
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+var _boardRunner = require('board.runner');
 
-var _glob = require('glob');
-
-var _glob2 = _interopRequireDefault(_glob);
-
-var _child_process = require('child_process');
-
-var _path = require('path');
-
-var _libLog = require('../lib/log');
-
-var _libLog2 = _interopRequireDefault(_libLog);
-
-(0, _libLog2['default'])('Board:: Starting All the thingz…');
-
-var files = ['runner', 'pipe', 'web'];
-
-files.forEach(function (file) {
-    var process = (0, _child_process.spawn)('node', [(0, _path.join)(__dirname, file)]);
-
-    process.stdout.on('data', function (data) {
-        (0, _libLog2['default'])(data.toString());
-    });
-
-    process.stderr.on('data', function (data) {
-        (0, _libLog2['default'])(data.toString());
-    });
-});
-
-(0, _libLog2['default'])('Board:: Started all the thingz.');
+(0, _boardRunner.runFiles)(['jobs', 'pipe', 'web'], __dirname);
 
 //# sourceMappingURL=board.js.map

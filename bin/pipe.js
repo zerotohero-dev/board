@@ -15,10 +15,10 @@
  * <https://github.com/v0lkan/board/issues>
  */
 
-var _libPipe = require('../lib/pipe');
+var _boardPipe = require('board.pipe');
 
 var _configJson = require('../config.json');
 
-(0, _libPipe.init)(_configJson.boards);
+(0, _boardPipe.init)(_configJson.boards);
 
 //# sourceMappingURL=pipe.js.map

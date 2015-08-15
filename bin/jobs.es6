@@ -15,19 +15,6 @@
  * <https://github.com/v0lkan/board/issues>
  */
 
-Object.defineProperty(exports, '__esModule', {
-    value: true
-});
-var every = function every(seconds, delegate) {
-    setInterval(function () {
-        try {
-            delegate();
-        } catch (ignore) {
-            console.log(ignore);
-        }
-    }, seconds * 1000);
-};
+import {runRelative as run} from 'board.runner';
 
-exports.every = every;
-
-//# sourceMappingURL=runner.js.map
+run(__dirname, '..', 'jobs/**/*.js');
