@@ -15,12 +15,7 @@
  * <https://github.com/v0lkan/board/issues>
  */
 
-// TODO: move Board lib to a separate npm module.
-// this project should only contain the bare minimum that the user has to
-// configure to run the bhards.
-// import * as job from 'board.lib/job'
-// or better `import * as job from 'board.job'
-require('../lib/job').create({
+require('board.job').create({
     interval: 3,
 
     // TODO: find a few better names.
