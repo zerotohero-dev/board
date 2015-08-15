@@ -1,6 +1,6 @@
 {
   "name": "board",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A minimalistic dashboard application.",
   "main": "index.js",
   "scripts": {
@@ -23,10 +23,9 @@
   },
   "homepage": "https://github.com/v0lkan/board",
   "dependencies": {
-    "express": "^4.13.3",
-    "glob": "^5.0.14",
-    "requirejs": "^2.1.20",
-    "socket.io": "^1.3.6",
-    "zmq": "^2.12.0"
+    "board.job": "^0.1.1",
+    "board.pipe": "^0.2.1",
+    "board.runner": "^0.3.0",
+    "board.web": "^0.2.1"
   }
 }

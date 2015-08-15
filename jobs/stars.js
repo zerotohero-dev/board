@@ -15,7 +15,7 @@
  * <https://github.com/v0lkan/board/issues>
  */
 
-require('../lib/job').create({
+require('board.job').create({
     interval: 5,
     targets: ['hello', 'world']
 }, function(send) {

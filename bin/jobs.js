@@ -15,18 +15,8 @@
  * <https://github.com/v0lkan/board/issues>
  */
 
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-var log = function log() {
-  for (var _len = arguments.length, items = Array(_len), _key = 0; _key < _len; _key++) {
-    items[_key] = arguments[_key];
-  }
+var _boardRunner = require('board.runner');
 
-  console.log(items);
-};
+(0, _boardRunner.runRelative)(__dirname, '..', 'jobs/**/*.js');
 
-exports['default'] = log;
-module.exports = exports['default'];
-
-//# sourceMappingURL=log.js.map
+//# sourceMappingURL=jobs.js.map

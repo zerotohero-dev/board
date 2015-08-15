@@ -5,4 +5,5 @@
       /_.___/\____/\__,_/ /_/    \__,_/
             a minimalist dashboard and monitoring solution.
 
-Lorem.
+// TODO: write a proper README.
+// TODO: ^ for all the board.* modules.

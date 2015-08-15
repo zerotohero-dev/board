@@ -15,7 +15,7 @@
  * <https://github.com/v0lkan/board/issues>
  */
 
-import {init} from '../lib/pipe';
+import {init} from 'board.pipe';
 import {boards} from '../config.json';
 
 init(boards);
