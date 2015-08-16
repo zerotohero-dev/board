@@ -6,11 +6,18 @@
             a minimalist dashboard and monitoring solution.
 
 
-```
-// TODO: write a proper README.
+## Demo?
 
-// TODO: ^ for all the board.* modules.
-```
+<http://volkan.io:4244/shuttle>
+
+Note that things are not quite settled yet. 
+
+Even this README is by no means complete at all.
+
+Feel free to report any issues that you find bu creating PRs.
+
+
+## Installation
 
 quick README for Debian-based systems
 
@@ -23,10 +30,10 @@ npm install
 node bin/board 1>/dev/null &
 ```
 
-Demo?
+## Stuff
 
-<http://volkan.io:4244/shuttle>
+```
+// TODO: write a proper README.
 
-Note that things are not quite settled yet. — Feel free to report any issues that you find.
-
-Send your suggestions and comment by creating PRs.
+// TODO: ^ for all the board.* modules.
+```
