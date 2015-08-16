@@ -1,3 +1,9 @@
+## board 0.4.0
+
+* Added sample boards and jobs.
+* Code cleaned up.
+* The app needs styling updates, and also a proper README needs to be written.
+
 ## board 0.3.0
 
 * Initially working version. 
