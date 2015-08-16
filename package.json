@@ -1,6 +1,6 @@
 {
   "name": "board",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "A minimalistic dashboard application.",
   "main": "index.js",
   "scripts": {
