@@ -1,0 +1,89 @@
+/*
+ *  ______                     _________
+ *  ___  /_____________ _____________  /
+ *  __  __ \  __ \  __ `/_  ___/  __  /
+ *  _  /_/ / /_/ / /_/ /_  /   / /_/ /
+ *  /_.___/\____/\__,_/ /_/    \__,_/
+ *      a minimalist dashboard and monitoring solution.
+ *
+ * This program is distributed under the terms of the MIT license.
+ * Please see `LICENSE.md` file for details.
+ *
+ * Send your comments and suggestions to…
+ * <https://github.com/v0lkan/board/issues>
+ */
+
+/**
+ * ## Poor Man's Reset
+ */
+
+* {margin: 0; padding:0}
+
+/**
+ * ## Body
+ */
+
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background: #030303;
+}
+
+/**
+ * ## Tile Styles
+ */
+
+.error   {background: #da2f16; color: #ffffff;}
+.info    {background: #1688DA; color: #ffffff;}
+.warning {background: #DA9516; color: #000000;}
+.success {background: #96DA16; color: #000000;}
+
+/**
+ * ## Headings
+ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1.2em;
+    margin-bottom:1em;
+    background:#000;
+    color:#fff;
+    font-weight:normal;
+    opacity: 0.5;
+    line-height:2em;
+}
+
+/**
+ * ## UI Layout
+ */
+
+#Yield {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+    justify-content: center;
+}
+
+[data-tile] {
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+    padding: 0;
+
+    text-align: center;
+}
+
+/**
+ * ## Tile Styling
+ */
+
+[data-tile] p,
+[data-tile] div,
+[data-tile] ul,
+[data-tile] ol,
+[data-tile] dl {
+    padding: 1em;
+}
