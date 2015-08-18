@@ -1,3 +1,7 @@
+## board v.0.5.1
+
+* BUGFIX: the web page was mistakenly opening connections to `localhost`. Replaced it with a protocol-relative URL.
+
 ## board v.0.5.0
 
 * Moved the CSS to the main project; not it's easier for everyone to style the proeject.
