@@ -1,4 +1,4 @@
-## board v.0.5.0
+## board v.0.5.1
 
 * BUGFIX: the web page was mistakenly opening connections to `localhost`. Replaced it with a protocol-relative URL.
 
