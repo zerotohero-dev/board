@@ -1,3 +1,11 @@
+> **NOTE**
+>
+> This project is no longer maintained (*at least for a while*).
+>
+> If you want to be the maintainer, contact me
+> at me@volkan.io
+>
+
       ______                     _________
       ___  /_____________ _____________  /
       __  __ \  __ \  __ `/_  ___/  __  /
@@ -8,7 +16,8 @@
 
 ## Demo?
 
-<http://volkan.io:4244/shuttle>
+
+TODO: fix the demo url.
 
 Note that things are not quite settled yet. 
 
